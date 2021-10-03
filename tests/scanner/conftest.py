@@ -12,6 +12,5 @@ def run_around_tests(page: Page, integration):
     # Actual test
     pass
     yield
-    input("wait")
     pass
     # Code that will run after your test

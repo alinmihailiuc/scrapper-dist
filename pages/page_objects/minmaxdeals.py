@@ -87,7 +87,6 @@ class MinMaxDeals(Base):
     def get_upc(self):
         return_upc = self.find_upc()
         if not return_upc:
-            input("Check return_upc")
             assert "UPC not found for {}".format(self.current_product)
         return return_upc
 
