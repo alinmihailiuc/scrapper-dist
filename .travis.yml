@@ -5,7 +5,7 @@ env:
     global:
     - SHA=$(git rev-parse HEAD)
 before_install:
-    - docker build -t mihailiucalin/distrib_scrapper:latest ./distrib_scrapper
+    - docker build -t mihailiucalin/distrib_scrapper:latest .
     - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
     - docker push mihailiucalin/distrib_scrapper:latest
 script:
