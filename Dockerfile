@@ -15,10 +15,7 @@ RUN python -m playwright install
 
 # Install application into container
 WORKDIR /app
-COPY package.json .
-COPY package-lock.json .
 ENV TEST "scanner"
-RUN npm install
 COPY . .
 # Run tests
 ENTRYPOINT ["/bin/bash", "start_tests.sh"]
