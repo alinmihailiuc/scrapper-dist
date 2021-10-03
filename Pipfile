@@ -49,7 +49,9 @@ retrypy = "*"
 retry="*"
 jsondiff="*"
 python-amazon-simple-product-api = "*"
-
+google-api-python-client = "*"
+google-auth-oauthlib = "*"
+google = "*"
 [dev-packages]
 
 [requires]
