@@ -1,0 +1,106 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "required": [
+    "count",
+    "next",
+    "previous",
+    "results"
+  ],
+  "properties": {
+    "count": {
+      "$id": "#/properties/count",
+      "type": "integer"
+    },
+    "next": {
+      "$id": "#/properties/next",
+      "type": "null",
+      "enum": [null]
+    },
+    "previous": {
+      "$id": "#/properties/previous",
+      "type": "null",
+      "enum": [null]
+    },
+    "results": {
+      "$id": "#/properties/results",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/results/items",
+        "type": "object",
+        "required": [
+          "id",
+          "account",
+          "updated_at",
+          "make",
+          "model",
+          "year",
+          "identification",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "$id": "#/properties/results/items/properties/id",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "client": {
+            "$id": "#/properties/results/items/properties/client",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "created_by": {
+            "$id": "#/properties/results/items/properties/created_by",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "account": {
+            "$id": "#/properties/results/items/properties/account",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "created_at": {
+            "$id": "#/properties/results/items/properties/created_at",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "updated_at": {
+            "$id": "#/properties/results/items/properties/updated_at",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "deleted_at": {
+            "$id": "#/properties/results/items/properties/deleted_at",
+            "type": "null",
+            "enum": [null]
+          },
+          "make": {
+            "$id": "#/properties/results/items/properties/make",
+            "type": ["string", "null"],
+            "pattern": "^(.*)$"
+          },
+          "model": {
+            "$id": "#/properties/results/items/properties/model",
+            "type": ["string", "null"],
+            "pattern": "^(.*)$"
+          },
+          "year": {
+            "$id": "#/properties/results/items/properties/year",
+            "type": ["integer", "null"]
+          },
+          "identification": {
+            "$id": "#/properties/results/items/properties/identification",
+            "type": ["string","null"]
+          },
+          "type": {
+            "$id": "#/properties/results/items/properties/type",
+            "type": "string",
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

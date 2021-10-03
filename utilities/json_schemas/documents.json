@@ -1,0 +1,90 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "required": [
+    "count",
+    "next",
+    "previous",
+    "results"
+  ],
+  "properties": {
+    "count": {
+      "$id": "#/properties/count",
+      "type": "integer"
+    },
+    "next": {
+      "$id": "#/properties/next",
+      "type": ["string", "null"]
+    },
+    "previous": {
+      "$id": "#/properties/previous",
+      "type": "null"
+    },
+    "results": {
+        "$id": "#/properties/results",
+        "type": "array",
+        "additionalItems": true,
+        "items": {
+            "$id": "#/properties/results/items",
+            "type": "object",
+            "required": [
+                "id",
+                "account",
+                "file_url",        
+                "created_at",
+                "updated_at",
+                "document_number",
+                "document_type",
+                "document_type_description",
+                "expiration_date",
+                "employer"
+            ],
+            "properties": {
+                "id": {
+                    "$id": "#/properties/results/items/properties/id",
+                    "type": "string"
+                },
+                "account": {
+                    "$id": "#/properties/results/items/properties/account",
+                    "type": "string"
+                },
+                "file_url": {
+                    "$id": "#/properties/results/items/properties/file_url",
+                    "type": ["string","null"]
+                },
+                "created_at": {
+                    "$id": "#/properties/results/items/properties/created_at",
+                    "type": "string"
+                },
+                "updated_at": {
+                    "$id": "#/properties/results/items/properties/updated_at",
+                    "type": "string"
+                },
+                "document_number": {
+                    "$id": "#/properties/results/items/properties/document_number",
+                    "type": ["string","null"]
+                },
+                "document_type": {
+                    "$id": "#/properties/results/items/properties/document_type",
+                    "type": ["string","null"]
+                },
+                "document_type_description": {
+                    "$id": "#/properties/results/items/properties/document_type_description",
+                    "type": ["string","null"]
+                },
+                "expiration_date": {
+                    "$id": "#/properties/results/items/properties/expiration_date",
+                    "type": ["string","null"]
+                },
+                "employer": {
+                    "$id": "#/properties/results/items/properties/employer",
+                    "type": ["string","null"]
+                }
+            },
+            "additionalProperties": true
+        }
+    }
+  }
+}

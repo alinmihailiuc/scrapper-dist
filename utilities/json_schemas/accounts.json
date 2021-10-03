@@ -1,0 +1,243 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "required": [
+    "id",
+    "user",
+    "connection",
+    "updated_at",
+    "availability",
+    "status",
+    "error_code",
+    "data_partner"
+  ],
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string"
+    },
+    "client": {
+      "$id": "#/properties/client",
+      "type": "string"
+    },
+    "created_by": {
+      "$id": "#/properties/created_by",
+      "type": "string"
+    },
+    "user": {
+      "$id": "#/properties/user",
+      "type": "string"
+    },
+    "connection": {
+        "$id": "#/properties/connection",
+        "type": "object",
+        "required": [
+            "status",
+            "error_code",
+            "updated_at"
+        ],
+        "additionalProperties": true,
+        "properties": {
+            "status": {
+                "$id": "#/properties/connection/properties/status",
+                "type": "string",
+                "enum": ["connected"]
+            },
+            "error_code": {
+                "$id": "#/properties/connection/properties/error_code",
+                "type": "null"
+            },
+            "updated_at": {
+                "$id": "#/properties/connection/properties/updated_at",
+                "type": "string"
+            }
+        }
+    },
+    "created_at": {
+      "$id": "#/properties/created_at",
+      "type": "string"
+    },
+    "updated_at": {
+      "$id": "#/properties/updated_at",
+      "type": "string"
+    },
+    "deleted_at": {
+      "$id": "#/properties/deleted_at",
+      "type": "null"
+    },
+    "availability": {
+      "$id": "#/properties/availability",
+      "type": "object",
+      "required": [
+        "vehicles",
+        "documents",
+        "activities",
+        "payouts",
+        "profiles",
+        "reputations"
+      ],
+      "properties": {
+        "vehicles": {
+          "$id": "#/properties/availability/properties/vehicles",
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "$id": "#/properties/availability/properties/vehicles/properties/status",
+              "type": "string",
+              "enum": ["synced"]
+            }
+          }
+        },
+        "documents": {
+          "$id": "#/properties/availability/properties/documents",
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "$id": "#/properties/availability/properties/documents/properties/status",
+              "type": "string",
+              "enum": ["synced"]
+            }
+          }
+        },
+        "activities": {
+          "$id": "#/properties/availability/properties/activities",
+          "type": "object",
+          "required": [
+            "status",
+            "updated_at",
+            "available_to",
+            "available_from",
+            "available_count"
+          ],
+          "properties": {
+            "status": {
+              "$id": "#/properties/availability/properties/activities/properties/status",
+              "type": "string",
+              "enum": ["synced"]
+            },
+            "updated_at": {
+              "$id": "#/properties/availability/properties/activities/properties/updated_at",
+              "type": "string"
+            },
+            "available_to": {
+              "$id": "#/properties/availability/properties/activities/properties/available_to",
+              "type": ["string","null"]
+            },
+            "available_from": {
+              "$id": "#/properties/availability/properties/activities/properties/available_from",
+              "type": ["string","null"]
+            },
+            "available_count": {
+              "$id": "#/properties/availability/properties/activities/properties/available_count",
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "payouts": {
+          "$id": "#/properties/availability/properties/payouts",
+          "type": "object",
+          "required": [
+            "status",
+            "updated_at",
+            "available_to",
+            "available_from",
+            "available_count"
+          ],
+          "properties": {
+            "status": {
+              "$id": "#/properties/availability/properties/payouts/properties/status",
+              "type": "string",
+              "enum": ["synced"]
+            },
+            "updated_at": {
+              "$id": "#/properties/availability/properties/payouts/properties/updated_at",
+              "type": "string"
+            },
+            "available_to": {
+              "$id": "#/properties/availability/properties/payouts/properties/available_to",
+              "type": ["string","null"]
+            },
+            "available_from": {
+              "$id": "#/properties/availability/properties/payouts/properties/available_from",
+              "type": ["string","null"]
+            },
+            "available_count": {
+              "$id": "#/properties/availability/properties/payouts/properties/available_count",
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "profiles": {
+          "$id": "#/properties/availability/properties/profiles",
+          "type": "object",
+          "required": [
+            "status",
+            "updated_at"
+          ],
+          "properties": {
+            "status": {
+              "$id": "#/properties/availability/properties/profiles/properties/status",
+              "type": "string",
+              "enum": ["synced"]
+            },
+            "updated_at": {
+              "$id": "#/properties/availability/properties/profiles/properties/updated_at",
+              "type": "string"
+            }
+          }
+        },
+        "reputations": {
+          "$id": "#/properties/availability/properties/reputations",
+          "type": "object",
+          "required": [
+            "status",
+            "updated_at"
+          ],
+          "properties": {
+            "status": {
+              "$id": "#/properties/availability/properties/reputations/properties/status",
+              "type": "string",
+              "enum": ["synced"]
+            },
+            "updated_at": {
+              "$id": "#/properties/availability/properties/reputations/properties/updated_at",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    },
+    "status": {
+      "$id": "#/properties/status",
+      "type": "string",
+      "enum": ["done"]
+    },
+    "error_code": {
+      "$id": "#/properties/error_code",
+      "type": "null"
+    },
+    "data_partner": {
+      "$id": "#/properties/data_partner",
+      "type": "string"
+    },
+    "link_item": {
+      "$id": "#/properties/link_item",
+      "type": "string"
+    },
+    "integration": {
+      "$id": "#/properties/integration",
+      "type": "string"
+    }
+  }
+}

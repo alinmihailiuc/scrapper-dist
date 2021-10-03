@@ -1,0 +1,203 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "required": [
+    "next",
+    "previous",
+    "results"
+  ],
+  "properties": {
+    "next": {
+      "$id": "#/properties/next",
+      "type": ["string", "null"],
+      "pattern": "^(.*)$"
+    },
+    "previous": {
+      "$id": "#/properties/previous",
+      "type": "null"
+    },
+    "results": {
+      "$id": "#/properties/results",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/results/items",
+        "type": "object",
+        "required": [
+          "id",
+          "account",
+
+          "updated_at",
+          "type",
+          "start_location",
+          "end_location",
+          "distance",
+          "start_date",
+          "end_date",
+          "num_tasks",
+          "income",
+          "timezone"
+        ],
+        "properties": {
+          "id": {
+            "$id": "#/properties/results/items/properties/id",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "client": {
+            "$id": "#/properties/results/items/properties/client",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "created_by": {
+            "$id": "#/properties/results/items/properties/created_by",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "account": {
+            "$id": "#/properties/results/items/properties/account",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "created_at": {
+            "$id": "#/properties/results/items/properties/created_at",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "updated_at": {
+            "$id": "#/properties/results/items/properties/updated_at",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "deleted_at": {
+            "$id": "#/properties/results/items/properties/deleted_at",
+            "type": "null"
+          },
+          "type": {
+            "$id": "#/properties/results/items/properties/type",
+            "type": "string",
+            "pattern": "^(.*)$",
+            "enum": ["rideshare","delivery","hourly"]
+          },
+          "start_location": {
+            "$id": "#/properties/results/items/properties/start_location",
+            "type": ["object","null"],
+            "required": [
+              "lat",
+              "lng",
+              "formatted_address"
+            ],
+            "properties": {
+              "lat": {
+                "$id": "#/properties/results/items/properties/start_location/properties/lat",
+                "type": ["string", "null"]
+              },
+              "lng": {
+                "$id": "#/properties/results/items/properties/start_location/properties/lng",
+                "type": ["string", "null"]
+              },
+              "formatted_address": {
+                "$id": "#/properties/results/items/properties/start_location/properties/formatted_address",
+                "type": ["string", "null"]
+              }
+            }
+          },
+          "end_location": {
+            "$id": "#/properties/results/items/properties/end_location",
+            "type": ["object","null"],
+            "required": [
+              "lat",
+              "lng",
+              "formatted_address"
+            ],
+            "properties": {
+              "lat": {
+                "$id": "#/properties/results/items/properties/end_location/properties/lat",
+                "type": ["string", "null"]
+              },
+              "lng": {
+                "$id": "#/properties/results/items/properties/end_location/properties/lng",
+                "type": ["string", "null"]
+              },
+              "formatted_address": {
+                "$id": "#/properties/results/items/properties/end_location/properties/formatted_address",
+                "type": ["string", "null"],
+                "pattern": "^(.*)$"
+              }
+            }
+          },
+          "distance": {
+            "$id": "#/properties/results/items/properties/distance",
+            "type": ["string", "null"],
+            "pattern": "^(\\d*).(\\d{2})$"
+          },
+          "start_date": {
+            "$id": "#/properties/results/items/properties/start_date",
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\S*Z$"
+          },
+          "end_date": {
+            "$id": "#/properties/results/items/properties/end_date",
+            "type": ["string", "null"],
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\S*Z$"
+          },
+          "num_tasks": {
+            "$id": "#/properties/results/items/properties/num_tasks",
+            "type": "integer"
+          },
+          "income": {
+            "$id": "#/properties/results/items/properties/income",
+            "type": "object",
+            "required": [
+              "pay",
+              "fees",
+              "tips",
+              "bonus",
+              "total",
+              "currency",
+              "total_charge"
+            ],
+            "properties": {
+              "pay": {
+                "$id": "#/properties/results/items/properties/income/properties/pay",
+                "type": "string"
+              },
+              "fees": {
+                "$id": "#/properties/results/items/properties/income/properties/fees",
+                "type": ["string", "null"]
+              },
+              "tips": {
+                "$id": "#/properties/results/items/properties/income/properties/tips",
+                "type": ["string", "null"]
+              },
+              "bonus": {
+                "$id": "#/properties/results/items/properties/income/properties/bonus",
+                "type": ["string", "null"]
+              },
+              "total": {
+                "$id": "#/properties/results/items/properties/income/properties/total",
+                "type": "string"
+              },
+              "currency": {
+                "$id": "#/properties/results/items/properties/income/properties/currency",
+                "type": "string",
+                "pattern": "^(.*)$",
+                "enum": ["USD"]
+              },
+              "total_charge": {
+                "$id": "#/properties/results/items/properties/income/properties/total_charge",
+                "type": ["string", "null"]
+              }
+            }
+          },
+          "timezone": {
+            "$id": "#/properties/results/items/properties/timezone",
+            "type": "string",
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

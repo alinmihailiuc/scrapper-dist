@@ -1,0 +1,106 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "required": [
+        "count",
+        "next",
+        "previous",
+        "results"
+    ],
+    "properties": {
+        "count": {
+            "$id": "#/properties/count",
+            "type": "number",
+            "minimum": 0
+        },
+        "next": {
+            "$id": "#/properties/next"
+        },
+        "previous": {
+            "$id": "#/properties/previous"
+        },
+        "results": {
+            "$id": "#/properties/results",
+            "type": "array",
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/results/items",
+                "type": "object",
+                "required": [
+                    "id",
+                    "account",
+                    "status",
+                    "type",
+                    "payout_date",
+                    "currency",
+                    "gross_pay",
+                    "deductions",
+                    "net_pay",
+                    "hours",
+                    "bonuses",
+                    "reimbursements",
+                    "metadata"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                    "id": {
+                        "$id": "#/properties/results/items/properties/id",
+                        "type": "string"
+                    },
+                    "account": {
+                        "$id": "#/properties/results/items/properties/account",
+                        "type": "string"
+                    },
+                    "status": {
+                        "$id": "#/properties/results/items/properties/status",
+                        "type": "string"
+                    },
+                    "type": {
+                        "$id": "#/properties/results/items/properties/type",
+                        "type": "string"
+                    },
+                    "payout_date": {
+                        "$id": "#/properties/results/items/properties/payout_date",
+                        "type": "string"
+                    },
+                    "currency": {
+                        "$id": "#/properties/results/items/properties/currency",
+                        "type": "string"
+                    },
+                    "gross_pay": {
+                        "$id": "#/properties/results/items/properties/gross_pay",
+                        "type": "string"
+                    },
+                    "deductions": {
+                        "$id": "#/properties/results/items/properties/deductions",
+                        "type": ["string", "null"]
+                    },
+                    "net_pay": {
+                        "$id": "#/properties/results/items/properties/net_pay",
+                        "type": "string"
+                    },
+                    "hours": {
+                        "$id": "#/properties/results/items/properties/hours",
+                        "type": ["string","null"]
+                    },
+                    "bonuses": {
+                        "$id": "#/properties/results/items/properties/bonuses",
+                        "type": ["string","null"]
+                    },
+                    "reimbursements": {
+                        "$id": "#/properties/results/items/properties/bonuses",
+                        "type": ["string","null"]
+                    },
+                    "metadata": {
+                        "$id": "#/properties/results/items/properties/metadata",
+                        "type": "object",
+                        "required": [],
+                        "additionalProperties": true,
+                        "properties": {}
+                    }
+                }
+            }
+        }
+    }
+}
